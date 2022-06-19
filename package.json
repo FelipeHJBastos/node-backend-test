@@ -1,0 +1,26 @@
+{
+  "name": "node-backend-test",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "repository": "https://github.com/FelipeHJBastos/node-backend-test.git",
+  "author": "FelipeHJBastos <felipe.123.bastos@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "sucrase": "^3.21.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.7.3",
+    "sequelize": "^6.20.1",
+    "uuid": "^8.3.2"
+  }
+}
