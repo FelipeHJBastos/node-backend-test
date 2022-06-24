@@ -1,10 +1,11 @@
 import 'dotenv/config'
-import { v4 } from 'uuid'
+import { Book } from './model/book';
 
 import express from 'express';
 import database from './database';
 import { loginRouter } from './routes/login';
 import { booksRouter } from './routes/books';
+import { rentRouter } from './routes/rent';
 
 import passport from 'passport';
 import session from 'express-session';
@@ -24,7 +25,7 @@ app.use(express.json());
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
-  resave: false,
+  resave: true,
   saveUninitialized: false,
   cookie: { maxAge: 15 * 60 * 1000 }
 }));
@@ -34,5 +35,6 @@ app.use(passport.session());
 
 app.use('/login', loginRouter);
 app.use('/books', authMiddleware, booksRouter);
+app.use('/rent', authMiddleware, rentRouter);
 
 app.listen(3000, () => { console.log('Server is running...') });
